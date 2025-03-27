@@ -2,9 +2,28 @@ import { RouteRecordRaw } from 'vue-router';
 
 const routes: RouteRecordRaw[] = [
   {
-    path: '/',
+    path: '/primary-data',
     component: () => import('layouts/MainLayout.vue'),
-    children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
+    children: [{ path: '', component: () => import('pages/PrimaryDataPage.vue') }],
+  },
+  {
+    path: '/',
+    redirect: '/primary-data',
+  },
+  {
+    path: '/contact-details',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [{ path: '', component: () => import('pages/ContactDetailsPage.vue') }],
+  },
+  {
+    path: '/work-experience',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [{ path: '', component: () => import('pages/WorkExperiencePage.vue') }],
+  },
+  {
+    path: '/summary/:id',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [{ path: '', component: () => import('pages/SummaryPage.vue') }],
   },
 
   // Always leave this as last one,
